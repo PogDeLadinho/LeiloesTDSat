@@ -191,35 +191,7 @@ public class listagemVIEW extends javax.swing.JFrame {
         });
     }
 
-    private void PreencherTabela(String filtro){
 
-    conectaDAO dao = new conectaDAO();
-    boolean status = dao.conectar();
-    if (status == false ){
-        JOptionPane.showMessageDialog(null, "erro de conexão");
-    }else{
-        List<ProdutosDTO> listaProdutos = dao.listagemProdutos(filtro);
-        
-        DefaultTableModel tabelaClientes = (DefaultTableModel) jtblistaProdutos.getModel();
-            jtblistaProdutos.setRowSorter(new TableRowSorter(tabelaClientes));
-            tabelaClientes.setNumRows(0);
-            
-            for (ProdutosDTO p : listaProdutos){
-                Object[] obj = new Object[]{
-                    p.getId(),
-                    p.getNome(),
-                    p.getValor(),
-                    p.getStatus()
-                    
-                };
-                  
-                tabelaClientes.addRow(obj);
-                         
-            }
-
-    }
-        
-}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVendas;
