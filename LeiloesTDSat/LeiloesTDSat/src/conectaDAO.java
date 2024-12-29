@@ -30,7 +30,7 @@ public class conectaDAO {
 
             String url = "jdbc:mysql://127.0.0.1:3306/uc10";
             String user = "root";
-            String password = "xandrerock17";
+            String password = "";
             conn = DriverManager.getConnection(url, user, password);
             return true;
         } catch (SQLException erro){
